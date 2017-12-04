@@ -11,13 +11,33 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
 import java.lang.String ; 
+import java.sql.PreparedStatement;
+import java.sql.Timestamp;
+import java.util.Date ; 
 
 /**
  *
  * @author sn
  */
 public class Connector  {
-        
+    
+    
+public static int get_tablespace_id(String s , Connection conn){
+    int res = 0; 
+    try{
+    String query = " Select ID FROM TABLESPACE WHERE TABLESPACE_NAME = '"+s+"'" ; 
+    Statement stmt = conn.createStatement();
+    ResultSet resultSet = stmt.executeQuery(query);
+    res = Integer.parseInt(resultSet.getString("ID")) ; 
+    }catch(Exception e){}
+    return res ; 
+}    
+
+public static String put_plicas(String s){
+    String res  = '\''+s+'\'' ; 
+    return res ; 
+}
+    
     
 public static void main(String[] args){
  
@@ -72,31 +92,62 @@ public static void main(String[] args){
             resultSet = stmt.executeQuery(query);
             System.out.println("Printing Tablespaces \"TABLESPACE\" ");
             System.out.println("----------------------------------");
+            
+            
             int i = 1 ; 
+            query = "INSERT INTO tablespace(id, tablespace_name ,status ,total_size ,used_size, timestamp) "
+                    + "VALUES(?, ?, ?, ?, ?,?)" ; 
+            PreparedStatement psmt = conn2.prepareStatement(query) ; 
+            String name ; 
+            String status ; 
+            Timestamp t = null ; 
             while(resultSet.next())
             {
                 //Print
-                
-                System.out.println(resultSet.getString("tablespace_name"));                
+                t = new Timestamp(System.currentTimeMillis()) ; 
+                name = resultSet.getString("tablespace_name"); 
+                status = resultSet.getString("status"); 
+                //System.out.println(resultSet.getString("tablespace_name"));
+                psmt.setInt(1,i++) ; 
+                psmt.setString(2,name) ;
+                psmt.setString(3,status) ;
+                psmt.setInt(4,0) ; 
+                psmt.setInt(5,0) ; 
+                psmt.setTimestamp(6,t) ; 
+                psmt.executeUpdate() ; 
+                System.out.println(">>>>> " + psmt);
                 }
-                Statement st = conn2.createStatement() ; 
-                String name = "BBBB" ; 
-                String s = "INSERT INTO TABLESPACE " + "VALUES ("+ i++ +","+ name + ", 'ONLINE' , 0 , 0 ,NULL)" ; 
-                System.out.println(s) ; 
-                System.out.println(st.executeUpdate(s)) ;
             
             
-            /**
-            query = "SELECT * FROM V$DATAFILE" ; 
+            
+            query = "SELECT * FROM V$DATAFILE_HEADER" ; 
             resultSet = stmt.executeQuery(query);
             System.out.println("Printing DATAFILE_NAME \"DATAFILE\" ");
             System.out.println("----------------------------------");
+            query = "INSERT INTO datafile(id, datafile_name ,file_size ,used_size, status, tablespace , timestamp) "
+                    + "VALUES(?, ?, ?, ?, ?, ?, ?)" ; 
+            psmt = conn2.prepareStatement(query) ;             
+            i=1 ; 
             while(resultSet.next())
             {
-                //Print
-                System.out.println(resultSet.getString("NAME"));
+                //System.out.println(resultSet.getString("tablespace_name"));
+                t = new Timestamp(System.currentTimeMillis()) ; 
+                name = resultSet.getString("name"); 
+                status = resultSet.getString("status");
+                int fk_id = get_tablespace_id(resultSet.getString("tablespace_name") , conn2);
+                psmt.setInt(1,i++) ; 
+                psmt.setString(2,name) ;                
+                psmt.setInt(3,0) ;
+                psmt.setInt(4,0) ;
+                psmt.setString(5,status) ;
+                psmt.setInt(6,fk_id) ;
+                psmt.setTimestamp(7,t) ;
+                psmt.executeUpdate() ; 
+                System.out.println(">>>>> " + psmt);
                 }
     
+            
+            /**
             query = "SELECT * FROM DBA_USERS" ; 
             resultSet = stmt.executeQuery(query);
             System.out.println("Printing USER_NAME \"USER\" ");
