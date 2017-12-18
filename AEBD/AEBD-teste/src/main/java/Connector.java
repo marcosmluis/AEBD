@@ -76,6 +76,7 @@ public static void main(String[] args){
             
             
             String query = " Select * FROM user_tables ";
+            String query2 = ""; 
             Statement stmt = conn1.createStatement();
             ResultSet resultSet = stmt.executeQuery(query);
             /**
@@ -88,8 +89,30 @@ public static void main(String[] args){
                 }
             */
             
-            query = "SELECT * FROM dba_tablespaces" ; 
+            query = "SELECT  a.tablespace_name,\n" +
+"    ROUND (((c.BYTES - NVL (b.BYTES, 0)) / c.BYTES) * 100,2) percentage_used,\n" +
+"    c.BYTES / 1024 / 1024 space_allocated,\n" +
+"    ROUND (c.BYTES / 1024 / 1024 - NVL (b.BYTES, 0) / 1024 / 1024,2) space_used,\n" +
+"    ROUND (NVL (b.BYTES, 0) / 1024 / 1024, 2) space_free, \n" +
+"    c.DATAFILES\n" +
+"  FROM dba_tablespaces a,\n" +
+"       (    SELECT   tablespace_name, \n" +
+"                  SUM (BYTES) BYTES\n" +
+"           FROM   dba_free_space\n" +
+"       GROUP BY   tablespace_name\n" +
+"       ) b,\n" +
+"      (    SELECT   COUNT (1) DATAFILES, \n" +
+"                  SUM (BYTES) BYTES, \n" +
+"                  tablespace_name\n" +
+"           FROM   dba_data_files\n" +
+"       GROUP BY   tablespace_name\n" +
+"    ) c\n" +
+"  WHERE b.tablespace_name(+) = a.tablespace_name \n" +
+"    AND c.tablespace_name(+) = a.tablespace_name\n" +
+"ORDER BY NVL (((c.BYTES - NVL (b.BYTES, 0)) / c.BYTES), 0) DESC;" ; 
             resultSet = stmt.executeQuery(query);
+            
+            
             System.out.println("Printing Tablespaces \"TABLESPACE\" ");
             System.out.println("----------------------------------");
             
@@ -119,7 +142,7 @@ public static void main(String[] args){
                 }
             
             
-            
+            /**
             query = "SELECT * FROM V$DATAFILE_HEADER" ; 
             resultSet = stmt.executeQuery(query);
             System.out.println("Printing DATAFILE_NAME \"DATAFILE\" ");
@@ -145,7 +168,7 @@ public static void main(String[] args){
                 psmt.executeUpdate() ; 
                 System.out.println(">>>>> " + psmt);
                 }
-    
+            */
             
             /**
             query = "SELECT * FROM DBA_USERS" ; 
@@ -170,6 +193,31 @@ public static void main(String[] args){
             */
             
             
+            /** 
+             * possivel tablespaces getter
+            SELECT  a.tablespace_name,
+    ROUND (((c.BYTES - NVL (b.BYTES, 0)) / c.BYTES) * 100,2) percentage_used,
+    c.BYTES / 1024 / 1024 space_allocated,
+    ROUND (c.BYTES / 1024 / 1024 - NVL (b.BYTES, 0) / 1024 / 1024,2) space_used,
+    ROUND (NVL (b.BYTES, 0) / 1024 / 1024, 2) space_free, 
+    c.DATAFILES
+  FROM dba_tablespaces a,
+       (    SELECT   tablespace_name, 
+                  SUM (BYTES) BYTES
+           FROM   dba_free_space
+       GROUP BY   tablespace_name
+       ) b,
+      (    SELECT   COUNT (1) DATAFILES, 
+                  SUM (BYTES) BYTES, 
+                  tablespace_name
+           FROM   dba_data_files
+       GROUP BY   tablespace_name
+    ) c
+  WHERE b.tablespace_name(+) = a.tablespace_name 
+    AND c.tablespace_name(+) = a.tablespace_name
+ORDER BY NVL (((c.BYTES - NVL (b.BYTES, 0)) / c.BYTES), 0) DESC; 
+            
+             */
            
             
     }catch(ClassNotFoundException e){
