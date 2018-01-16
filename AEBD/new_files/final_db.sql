@@ -1,0 +1,643 @@
+--------------------------------------------------------
+--  File created - Terça-feira-Janeiro-16-2018   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table DATAFILE
+--------------------------------------------------------
+
+  CREATE TABLE "MANAGER"."DATAFILE" 
+   (	"NAME_DF" VARCHAR2(40 BYTE), 
+	"NAME_TB" VARCHAR2(40 BYTE), 
+	"FILE_SIZE" NUMBER, 
+	"USED_SIZE" NUMBER, 
+	"FREE_SIZE" NUMBER, 
+	"TIMESTAMP" TIMESTAMP (6), 
+	"TIMESTAMP_FK" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TP_TABLES" ;
+--------------------------------------------------------
+--  DDL for Table IO
+--------------------------------------------------------
+
+  CREATE TABLE "MANAGER"."IO" 
+   (	"TIMESTAMP" TIMESTAMP (6), 
+	"WRITES" FLOAT(126), 
+	"READS" FLOAT(126), 
+	"FREE_MEMORY" FLOAT(126)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TP_TABLES" ;
+--------------------------------------------------------
+--  DDL for Table SESSIONS
+--------------------------------------------------------
+
+  CREATE TABLE "MANAGER"."SESSIONS" 
+   (	"SID" VARCHAR2(20 BYTE), 
+	"USER_ID" NUMBER, 
+	"USERNAME" VARCHAR2(20 BYTE), 
+	"SERIAL" VARCHAR2(20 BYTE), 
+	"TIMESTAMP" TIMESTAMP (6), 
+	"TIMESTAMP_FK" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TP_TABLES" ;
+--------------------------------------------------------
+--  DDL for Table TABLESPACE
+--------------------------------------------------------
+
+  CREATE TABLE "MANAGER"."TABLESPACE" 
+   (	"NAME" VARCHAR2(40 BYTE), 
+	"USED_SIZE" NUMBER, 
+	"FREE_SIZE" NUMBER, 
+	"TOTAL_SIZE" NUMBER, 
+	"TIMESTAMP" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TP_TABLES" ;
+--------------------------------------------------------
+--  DDL for Table USERS
+--------------------------------------------------------
+
+  CREATE TABLE "MANAGER"."USERS" 
+   (	"USER_ID" NUMBER, 
+	"USERNAME" VARCHAR2(40 BYTE), 
+	"ACCOUNT_STATUS" VARCHAR2(20 BYTE), 
+	"DEFAULT_TB" VARCHAR2(40 BYTE), 
+	"TEMP_TB" VARCHAR2(40 BYTE), 
+	"CREATED" DATE, 
+	"TIMESTAMP" TIMESTAMP (6), 
+	"TIMESTAMP_FK" TIMESTAMP (6), 
+	"TIMESTAMP_FK2" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TP_TABLES" ;
+REM INSERTING into MANAGER.DATAFILE
+SET DEFINE OFF;
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('SYSAUX','/u01/app/oracle/oradata/orcl12c/sysaux01','540','510,19','28',to_timestamp('16-01-2018 16:37:51','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('SYSTEM','/u01/app/oracle/oradata/orcl12c/system01','820','809,75','9',to_timestamp('16-01-2018 16:37:51','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('UNDOTBS2','/u01/app/oracle/oradata/orcl12c/undotbs2','50','23,88','7',to_timestamp('16-01-2018 16:37:51','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('USERS','/u01/app/oracle/oradata/orcl12c/users01.','5',null,'4',to_timestamp('16-01-2018 16:37:51','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('SYSAUX','/u01/app/oracle/oradata/orcl12c/sysaux01','540','510,19','28',to_timestamp('16-01-2018 16:22:11','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('SYSTEM','/u01/app/oracle/oradata/orcl12c/system01','820','809,75','9',to_timestamp('16-01-2018 16:22:11','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('UNDOTBS2','/u01/app/oracle/oradata/orcl12c/undotbs2','50','23,88','7',to_timestamp('16-01-2018 16:22:11','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('USERS','/u01/app/oracle/oradata/orcl12c/users01.','5',null,'4',to_timestamp('16-01-2018 16:22:11','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('SYSAUX','/u01/app/oracle/oradata/orcl12c/sysaux01','540','510,19','28',to_timestamp('16-01-2018 16:45:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('SYSTEM','/u01/app/oracle/oradata/orcl12c/system01','820','809,75','9',to_timestamp('16-01-2018 16:45:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('UNDOTBS2','/u01/app/oracle/oradata/orcl12c/undotbs2','50','23,88','7',to_timestamp('16-01-2018 16:45:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('USERS','/u01/app/oracle/oradata/orcl12c/users01.','5',null,'4',to_timestamp('16-01-2018 16:45:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('SYSAUX','/u01/app/oracle/oradata/orcl12c/sysaux01','540','510,19','28',to_timestamp('16-01-2018 16:30:12','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('SYSTEM','/u01/app/oracle/oradata/orcl12c/system01','820','809,75','9',to_timestamp('16-01-2018 16:30:12','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('UNDOTBS2','/u01/app/oracle/oradata/orcl12c/undotbs2','50','23,88','7',to_timestamp('16-01-2018 16:30:12','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('USERS','/u01/app/oracle/oradata/orcl12c/users01.','5',null,'4',to_timestamp('16-01-2018 16:30:12','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('UNDOTBS2','/u01/app/oracle/oradata/orcl12c/undotbs2','50','23,88','7',to_timestamp('16-01-2018 16:47:58','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('USERS','/u01/app/oracle/oradata/orcl12c/users01.','5',null,'4',to_timestamp('16-01-2018 16:47:58','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('SYSAUX','/u01/app/oracle/oradata/orcl12c/sysaux01','540','510,19','28',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('SYSTEM','/u01/app/oracle/oradata/orcl12c/system01','820','809,75','9',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('UNDOTBS2','/u01/app/oracle/oradata/orcl12c/undotbs2','50','23,88','7',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('USERS','/u01/app/oracle/oradata/orcl12c/users01.','5',null,'4',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('SYSAUX','/u01/app/oracle/oradata/orcl12c/sysaux01','540','510,19','28',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('SYSTEM','/u01/app/oracle/oradata/orcl12c/system01','820','809,75','9',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('UNDOTBS2','/u01/app/oracle/oradata/orcl12c/undotbs2','50','23,88','7',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('USERS','/u01/app/oracle/oradata/orcl12c/users01.','5',null,'4',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('SYSAUX','/u01/app/oracle/oradata/orcl12c/sysaux01','540','510,19','28',to_timestamp('16-01-2018 16:47:58','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.DATAFILE (NAME_DF,NAME_TB,FILE_SIZE,USED_SIZE,FREE_SIZE,TIMESTAMP,TIMESTAMP_FK) values ('SYSTEM','/u01/app/oracle/oradata/orcl12c/system01','820','809,75','9',to_timestamp('16-01-2018 16:47:58','dd-mm-yyyy HH24:MI:SS'),null);
+REM INSERTING into MANAGER.IO
+SET DEFINE OFF;
+Insert into MANAGER.IO (TIMESTAMP,WRITES,READS,FREE_MEMORY) values (to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),'36,829453','4535,883','45721,938');
+Insert into MANAGER.IO (TIMESTAMP,WRITES,READS,FREE_MEMORY) values (to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),'39,779438','4986,0127','45702,22');
+Insert into MANAGER.IO (TIMESTAMP,WRITES,READS,FREE_MEMORY) values (to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),'40,846104','5436,429','45694,266');
+Insert into MANAGER.IO (TIMESTAMP,WRITES,READS,FREE_MEMORY) values (to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),'38,82942','5526,271','45690,29');
+REM INSERTING into MANAGER.SESSIONS
+SET DEFINE OFF;
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('4','0',null,'27106',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('5','0',null,'9369',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('6','0',null,'2549',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('7','0',null,'49937',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('8','0',null,'17770',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('9','0',null,'34808',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('10','0',null,'56835',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('11','0',null,'36827',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('12','0',null,'29348',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('13','0','SYS','47151',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('14','0',null,'31075',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('15','0',null,'44957',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('16','0',null,'33633',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('17','0',null,'57717',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('18','0',null,'61133',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('19','0',null,'32189',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('20','0',null,'8897',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('21','0',null,'10700',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('22','0',null,'54716',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('23','0',null,'27181',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('24','0',null,'8949',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('26','0',null,'23763',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('27','140','MANAGER','47563',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('28','140','MANAGER','37750',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('29','0',null,'14815',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('30','0',null,'41833',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('31','0',null,'63280',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('32','0',null,'12548',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('34','0','SYS','52627',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('35','0',null,'52638',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('36','0',null,'49292',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('37','0',null,'46029',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('39','0',null,'65459',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('44','0',null,'58982',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('47','0',null,'36304',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('49','0',null,'20385',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('50','0',null,'34987',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('51','0',null,'50019',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('52','0',null,'5942',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('64','0',null,'64401',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('68','0',null,'61716',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('2','0',null,'52782',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('3','0',null,'65029',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('73','0',null,'38206',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('76','0','SYS','10724',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('78','0',null,'37983',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('80','0','SYS','18175',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('82','0',null,'64789',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('83','0','SYS','58972',to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('2','0',null,'52782',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('3','0',null,'65029',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('4','0',null,'27106',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('5','0',null,'9369',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('6','0',null,'2549',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('7','0',null,'49937',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('8','0',null,'17770',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('9','0',null,'34808',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('10','0',null,'56835',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('11','0',null,'36827',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('12','0',null,'29348',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('13','0','SYS','47151',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('14','0',null,'31075',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('15','0',null,'44957',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('16','0',null,'33633',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('17','0',null,'57717',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('18','0',null,'61133',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('19','0',null,'32189',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('20','0',null,'8897',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('21','0',null,'10700',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('22','0',null,'54716',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('23','0',null,'27181',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('24','0',null,'8949',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('26','0',null,'23763',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('28','140','MANAGER','37750',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('29','0',null,'14815',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('30','0',null,'41833',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('31','0',null,'63280',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('32','0',null,'12548',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('34','0','SYS','52627',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('35','0',null,'52638',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('36','0',null,'49292',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('37','0',null,'46029',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('39','0',null,'65459',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('44','0',null,'58982',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('47','0',null,'36304',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('49','0',null,'20385',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('50','0',null,'34987',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('51','0',null,'50019',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('64','0',null,'64401',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('66','0','SYS','54707',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('68','0',null,'61716',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('71','0','SYS','59902',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('78','140','MANAGER','57820',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('80','0','SYS','18175',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('82','0',null,'64789',to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('2','0',null,'52782',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('3','0',null,'65029',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('4','0',null,'27106',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('5','0',null,'9369',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('6','0',null,'2549',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('7','0',null,'49937',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('8','0',null,'17770',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('9','0',null,'34808',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('10','0',null,'56835',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('11','0',null,'36827',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('12','0',null,'29348',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('13','0','SYS','47151',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('14','0',null,'31075',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('15','0',null,'44957',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('16','0',null,'33633',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('17','0',null,'57717',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('18','0',null,'61133',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('19','0',null,'32189',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('20','0',null,'8897',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('21','0',null,'10700',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('22','0',null,'54716',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('23','0',null,'27181',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('24','0',null,'8949',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('26','0',null,'23763',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('28','140','MANAGER','37750',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('29','0',null,'14815',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('30','0',null,'41833',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('31','0',null,'63280',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('32','0',null,'12548',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('34','0','SYS','52627',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('35','0',null,'52638',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('36','0',null,'49292',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('37','0',null,'46029',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('39','0',null,'65459',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('44','0',null,'58982',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('47','0',null,'36304',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('49','0',null,'20385',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('50','0',null,'34987',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('51','0',null,'50019',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('64','0',null,'64401',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('66','0','SYS','56251',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('68','0',null,'61716',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('71','140','MANAGER','50398',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('78','0','SYS','64851',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('80','0','SYS','18175',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('82','0',null,'64789',to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('2','0',null,'52782',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('3','0',null,'65029',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('4','0',null,'27106',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('5','0',null,'9369',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('6','0',null,'2549',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('7','0',null,'49937',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('8','0',null,'17770',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('9','0',null,'34808',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('10','0',null,'56835',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('11','0',null,'36827',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('12','0',null,'29348',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('13','0','SYS','47151',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('14','0',null,'31075',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('15','0',null,'44957',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('16','0',null,'33633',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('17','0',null,'57717',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('18','0',null,'61133',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('19','0',null,'32189',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('20','0',null,'8897',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('21','0',null,'10700',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('22','0',null,'54716',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('23','0',null,'27181',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('24','0',null,'8949',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('26','0',null,'23763',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('28','140','MANAGER','37750',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('29','0',null,'14815',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('30','0',null,'41833',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('31','0',null,'63280',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('32','0',null,'12548',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('34','0','SYS','52627',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('35','0',null,'52638',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('36','0',null,'49292',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('37','0',null,'46029',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('39','0',null,'65459',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('44','0',null,'58982',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('47','0',null,'36304',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('49','0',null,'20385',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('50','0',null,'34987',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('51','0',null,'50019',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('64','0',null,'64401',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('66','0','SYS','56251',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('68','0',null,'61716',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('71','140','MANAGER','50398',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('78','0','SYS','64851',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('80','0','SYS','18175',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('82','0',null,'64789',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('2','0',null,'52782',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('3','0',null,'65029',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('4','0',null,'27106',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('5','0',null,'9369',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('6','0',null,'2549',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('7','0',null,'49937',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('8','0',null,'17770',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('9','0',null,'34808',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('10','0',null,'56835',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('11','0',null,'36827',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('12','0',null,'29348',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('13','0','SYS','47151',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('14','0',null,'31075',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('15','0',null,'44957',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('16','0',null,'33633',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('17','0',null,'57717',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('18','0',null,'61133',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('19','0',null,'32189',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('20','0',null,'8897',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('21','0',null,'10700',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('22','0',null,'54716',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('23','0',null,'27181',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('24','0',null,'8949',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('26','0',null,'23763',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('28','140','MANAGER','37750',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('29','0',null,'14815',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('30','0',null,'41833',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('31','0',null,'63280',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('32','0',null,'12548',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('34','0','SYS','52627',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('35','0',null,'52638',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('36','0',null,'49292',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('37','0',null,'46029',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('39','0',null,'65459',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('44','0',null,'58982',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('47','0',null,'36304',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('49','0',null,'20385',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('50','0',null,'34987',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('51','0',null,'50019',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('64','0',null,'64401',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('66','0','SYS','56251',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('68','0',null,'61716',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('71','140','MANAGER','50398',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('78','0','SYS','64851',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('80','0','SYS','18175',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+Insert into MANAGER.SESSIONS (SID,USER_ID,USERNAME,SERIAL,TIMESTAMP,TIMESTAMP_FK) values ('82','0',null,'64789',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null);
+REM INSERTING into MANAGER.TABLESPACE
+SET DEFINE OFF;
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','508','32','540',to_timestamp('16-01-2018 15:53:59','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 15:53:59','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 15:53:59','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','27','23','50',to_timestamp('16-01-2018 15:53:59','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','508','32','540',to_timestamp('16-01-2018 15:54:25','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 15:54:25','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 15:54:25','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','27','23','50',to_timestamp('16-01-2018 15:54:25','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','511','29','540',to_timestamp('16-01-2018 16:05:49','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 16:05:49','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 16:05:49','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','25','25','50',to_timestamp('16-01-2018 16:05:49','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','511','29','540',to_timestamp('16-01-2018 16:06:40','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 16:06:40','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 16:06:40','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','25','25','50',to_timestamp('16-01-2018 16:06:40','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','511','29','540',to_timestamp('16-01-2018 16:06:58','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 16:06:58','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 16:06:58','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','25','25','50',to_timestamp('16-01-2018 16:06:58','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','511','29','540',to_timestamp('16-01-2018 16:07:34','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 16:07:34','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 16:07:34','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','25','25','50',to_timestamp('16-01-2018 16:07:34','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','511','29','540',to_timestamp('16-01-2018 16:09:21','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 16:09:21','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 16:09:21','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','25','25','50',to_timestamp('16-01-2018 16:09:21','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','511','29','540',to_timestamp('16-01-2018 16:10:45','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 16:10:45','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 16:10:45','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','25','25','50',to_timestamp('16-01-2018 16:10:45','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','511','29','540',to_timestamp('16-01-2018 16:11:50','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 16:11:50','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 16:11:50','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','25','25','50',to_timestamp('16-01-2018 16:11:50','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','508','32','540',to_timestamp('16-01-2018 15:35:45','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 15:35:45','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 15:35:45','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','27','23','50',to_timestamp('16-01-2018 15:35:45','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','508','32','540',to_timestamp('16-01-2018 15:36:49','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 15:36:49','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 15:36:49','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','27','23','50',to_timestamp('16-01-2018 15:36:49','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','508','32','540',to_timestamp('16-01-2018 15:38:40','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 15:38:40','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 15:38:40','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','27','23','50',to_timestamp('16-01-2018 15:38:40','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','508','32','540',to_timestamp('16-01-2018 15:39:49','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 15:39:49','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 15:39:49','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','27','23','50',to_timestamp('16-01-2018 15:39:49','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','511','29','540',to_timestamp('16-01-2018 16:03:30','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 16:03:30','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 16:03:30','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','25','25','50',to_timestamp('16-01-2018 16:03:30','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','511','29','540',to_timestamp('16-01-2018 16:03:54','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 16:03:54','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 16:03:54','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','25','25','50',to_timestamp('16-01-2018 16:03:54','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','511','29','540',to_timestamp('16-01-2018 16:37:51','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 16:37:51','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 16:37:51','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','25','25','50',to_timestamp('16-01-2018 16:37:51','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 15:42:47','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','27','23','50',to_timestamp('16-01-2018 15:42:47','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','508','32','540',to_timestamp('16-01-2018 15:59:20','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 15:59:20','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','508','32','540',to_timestamp('16-01-2018 15:42:47','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 15:42:47','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 15:59:20','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','27','23','50',to_timestamp('16-01-2018 15:59:20','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','511','29','540',to_timestamp('16-01-2018 16:10:16','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 16:10:16','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 16:10:16','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','25','25','50',to_timestamp('16-01-2018 16:10:16','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','511','29','540',to_timestamp('16-01-2018 16:22:11','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 16:22:11','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 16:22:11','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','25','25','50',to_timestamp('16-01-2018 16:22:11','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','511','29','540',to_timestamp('16-01-2018 16:45:32','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 16:45:32','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 16:45:32','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','25','25','50',to_timestamp('16-01-2018 16:45:32','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 16:30:12','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','25','25','50',to_timestamp('16-01-2018 16:30:12','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','511','29','540',to_timestamp('16-01-2018 16:30:12','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 16:30:12','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 16:17:45','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','25','25','50',to_timestamp('16-01-2018 16:17:45','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','511','29','540',to_timestamp('16-01-2018 16:20:37','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 16:20:37','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 16:20:37','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','25','25','50',to_timestamp('16-01-2018 16:20:37','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','511','29','540',to_timestamp('16-01-2018 16:21:03','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','511','29','540',to_timestamp('16-01-2018 16:17:45','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 16:17:45','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 16:21:03','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 16:21:03','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','25','25','50',to_timestamp('16-01-2018 16:21:03','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','511','29','540',to_timestamp('16-01-2018 16:47:58','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 16:47:58','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 16:47:58','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','25','25','50',to_timestamp('16-01-2018 16:47:58','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','511','29','540',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','25','25','50',to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSAUX','511','29','540',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('USERS','1','4','5',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('SYSTEM','811','9','820',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'));
+Insert into MANAGER.TABLESPACE (NAME,USED_SIZE,FREE_SIZE,TOTAL_SIZE,TIMESTAMP) values ('UNDOTBS2','25','25','50',to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'));
+REM INSERTING into MANAGER.USERS
+SET DEFINE OFF;
+Insert into MANAGER.USERS (USER_ID,USERNAME,ACCOUNT_STATUS,DEFAULT_TB,TEMP_TB,CREATED,TIMESTAMP,TIMESTAMP_FK,TIMESTAMP_FK2) values ('0','SYS','OPEN','SYSTEM','TEMP',to_date('26-01-2017','dd-mm-yyyy'),to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null,null);
+Insert into MANAGER.USERS (USER_ID,USERNAME,ACCOUNT_STATUS,DEFAULT_TB,TEMP_TB,CREATED,TIMESTAMP,TIMESTAMP_FK,TIMESTAMP_FK2) values ('9','SYSTEM','OPEN','SYSTEM','TEMP',to_date('26-01-2017','dd-mm-yyyy'),to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null,null);
+Insert into MANAGER.USERS (USER_ID,USERNAME,ACCOUNT_STATUS,DEFAULT_TB,TEMP_TB,CREATED,TIMESTAMP,TIMESTAMP_FK,TIMESTAMP_FK2) values ('63','ANONYMOUS','OPEN','SYSAUX','TEMP',to_date('26-01-2017','dd-mm-yyyy'),to_timestamp('16-01-2018 16:37:52','dd-mm-yyyy HH24:MI:SS'),null,null);
+Insert into MANAGER.USERS (USER_ID,USERNAME,ACCOUNT_STATUS,DEFAULT_TB,TEMP_TB,CREATED,TIMESTAMP,TIMESTAMP_FK,TIMESTAMP_FK2) values ('63','ANONYMOUS','OPEN','SYSAUX','TEMP',to_date('26-01-2017','dd-mm-yyyy'),to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null,null);
+Insert into MANAGER.USERS (USER_ID,USERNAME,ACCOUNT_STATUS,DEFAULT_TB,TEMP_TB,CREATED,TIMESTAMP,TIMESTAMP_FK,TIMESTAMP_FK2) values ('0','SYS','OPEN','SYSTEM','TEMP',to_date('26-01-2017','dd-mm-yyyy'),to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null,null);
+Insert into MANAGER.USERS (USER_ID,USERNAME,ACCOUNT_STATUS,DEFAULT_TB,TEMP_TB,CREATED,TIMESTAMP,TIMESTAMP_FK,TIMESTAMP_FK2) values ('9','SYSTEM','OPEN','SYSTEM','TEMP',to_date('26-01-2017','dd-mm-yyyy'),to_timestamp('16-01-2018 16:45:33','dd-mm-yyyy HH24:MI:SS'),null,null);
+Insert into MANAGER.USERS (USER_ID,USERNAME,ACCOUNT_STATUS,DEFAULT_TB,TEMP_TB,CREATED,TIMESTAMP,TIMESTAMP_FK,TIMESTAMP_FK2) values ('0','SYS','OPEN','SYSTEM','TEMP',to_date('26-01-2017','dd-mm-yyyy'),to_timestamp('16-01-2018 16:30:13','dd-mm-yyyy HH24:MI:SS'),null,null);
+Insert into MANAGER.USERS (USER_ID,USERNAME,ACCOUNT_STATUS,DEFAULT_TB,TEMP_TB,CREATED,TIMESTAMP,TIMESTAMP_FK,TIMESTAMP_FK2) values ('9','SYSTEM','OPEN','SYSTEM','TEMP',to_date('26-01-2017','dd-mm-yyyy'),to_timestamp('16-01-2018 16:30:13','dd-mm-yyyy HH24:MI:SS'),null,null);
+Insert into MANAGER.USERS (USER_ID,USERNAME,ACCOUNT_STATUS,DEFAULT_TB,TEMP_TB,CREATED,TIMESTAMP,TIMESTAMP_FK,TIMESTAMP_FK2) values ('63','ANONYMOUS','OPEN','SYSAUX','TEMP',to_date('26-01-2017','dd-mm-yyyy'),to_timestamp('16-01-2018 16:30:13','dd-mm-yyyy HH24:MI:SS'),null,null);
+Insert into MANAGER.USERS (USER_ID,USERNAME,ACCOUNT_STATUS,DEFAULT_TB,TEMP_TB,CREATED,TIMESTAMP,TIMESTAMP_FK,TIMESTAMP_FK2) values ('0','SYS','OPEN','SYSTEM','TEMP',to_date('26-01-2017','dd-mm-yyyy'),to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null,null);
+Insert into MANAGER.USERS (USER_ID,USERNAME,ACCOUNT_STATUS,DEFAULT_TB,TEMP_TB,CREATED,TIMESTAMP,TIMESTAMP_FK,TIMESTAMP_FK2) values ('9','SYSTEM','OPEN','SYSTEM','TEMP',to_date('26-01-2017','dd-mm-yyyy'),to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null,null);
+Insert into MANAGER.USERS (USER_ID,USERNAME,ACCOUNT_STATUS,DEFAULT_TB,TEMP_TB,CREATED,TIMESTAMP,TIMESTAMP_FK,TIMESTAMP_FK2) values ('63','ANONYMOUS','OPEN','SYSAUX','TEMP',to_date('26-01-2017','dd-mm-yyyy'),to_timestamp('16-01-2018 16:47:59','dd-mm-yyyy HH24:MI:SS'),null,null);
+Insert into MANAGER.USERS (USER_ID,USERNAME,ACCOUNT_STATUS,DEFAULT_TB,TEMP_TB,CREATED,TIMESTAMP,TIMESTAMP_FK,TIMESTAMP_FK2) values ('0','SYS','OPEN','SYSTEM','TEMP',to_date('26-01-2017','dd-mm-yyyy'),to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null,null);
+Insert into MANAGER.USERS (USER_ID,USERNAME,ACCOUNT_STATUS,DEFAULT_TB,TEMP_TB,CREATED,TIMESTAMP,TIMESTAMP_FK,TIMESTAMP_FK2) values ('9','SYSTEM','OPEN','SYSTEM','TEMP',to_date('26-01-2017','dd-mm-yyyy'),to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null,null);
+Insert into MANAGER.USERS (USER_ID,USERNAME,ACCOUNT_STATUS,DEFAULT_TB,TEMP_TB,CREATED,TIMESTAMP,TIMESTAMP_FK,TIMESTAMP_FK2) values ('63','ANONYMOUS','OPEN','SYSAUX','TEMP',to_date('26-01-2017','dd-mm-yyyy'),to_timestamp('16-01-2018 16:48:32','dd-mm-yyyy HH24:MI:SS'),null,null);
+Insert into MANAGER.USERS (USER_ID,USERNAME,ACCOUNT_STATUS,DEFAULT_TB,TEMP_TB,CREATED,TIMESTAMP,TIMESTAMP_FK,TIMESTAMP_FK2) values ('0','SYS','OPEN','SYSTEM','TEMP',to_date('26-01-2017','dd-mm-yyyy'),to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null,null);
+Insert into MANAGER.USERS (USER_ID,USERNAME,ACCOUNT_STATUS,DEFAULT_TB,TEMP_TB,CREATED,TIMESTAMP,TIMESTAMP_FK,TIMESTAMP_FK2) values ('9','SYSTEM','OPEN','SYSTEM','TEMP',to_date('26-01-2017','dd-mm-yyyy'),to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null,null);
+Insert into MANAGER.USERS (USER_ID,USERNAME,ACCOUNT_STATUS,DEFAULT_TB,TEMP_TB,CREATED,TIMESTAMP,TIMESTAMP_FK,TIMESTAMP_FK2) values ('63','ANONYMOUS','OPEN','SYSAUX','TEMP',to_date('26-01-2017','dd-mm-yyyy'),to_timestamp('16-01-2018 16:49:05','dd-mm-yyyy HH24:MI:SS'),null,null);
+--------------------------------------------------------
+--  DDL for Index DATAFILE_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "MANAGER"."DATAFILE_PK" ON "MANAGER"."DATAFILE" ("NAME_DF", "TIMESTAMP") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TP_TABLES" ;
+--------------------------------------------------------
+--  DDL for Index SESSIONS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "MANAGER"."SESSIONS_PK" ON "MANAGER"."SESSIONS" ("SID", "TIMESTAMP") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TP_TABLES" ;
+--------------------------------------------------------
+--  DDL for Index SYSTEM_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "MANAGER"."SYSTEM_PK" ON "MANAGER"."IO" ("TIMESTAMP") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TP_TABLES" ;
+--------------------------------------------------------
+--  DDL for Index TABLESPACE_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "MANAGER"."TABLESPACE_PK" ON "MANAGER"."TABLESPACE" ("NAME", "TIMESTAMP") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TP_TABLES" ;
+--------------------------------------------------------
+--  DDL for Index USERS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "MANAGER"."USERS_PK" ON "MANAGER"."USERS" ("USER_ID", "TIMESTAMP") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TP_TABLES" ;
+--------------------------------------------------------
+--  Constraints for Table DATAFILE
+--------------------------------------------------------
+
+  ALTER TABLE "MANAGER"."DATAFILE" MODIFY ("NAME_DF" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."DATAFILE" MODIFY ("NAME_TB" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."DATAFILE" MODIFY ("FILE_SIZE" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."DATAFILE" MODIFY ("FREE_SIZE" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."DATAFILE" MODIFY ("TIMESTAMP" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."DATAFILE" ADD CONSTRAINT "DATAFILE_PK" PRIMARY KEY ("NAME_DF", "TIMESTAMP")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TP_TABLES"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table IO
+--------------------------------------------------------
+
+  ALTER TABLE "MANAGER"."IO" MODIFY ("TIMESTAMP" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."IO" MODIFY ("WRITES" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."IO" MODIFY ("READS" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."IO" MODIFY ("FREE_MEMORY" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."IO" ADD CONSTRAINT "SYSTEM_PK" PRIMARY KEY ("TIMESTAMP")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TP_TABLES"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table SESSIONS
+--------------------------------------------------------
+
+  ALTER TABLE "MANAGER"."SESSIONS" MODIFY ("SID" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."SESSIONS" MODIFY ("USER_ID" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."SESSIONS" MODIFY ("SERIAL" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."SESSIONS" MODIFY ("TIMESTAMP" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."SESSIONS" ADD CONSTRAINT "SESSIONS_PK" PRIMARY KEY ("SID", "TIMESTAMP")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TP_TABLES"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TABLESPACE
+--------------------------------------------------------
+
+  ALTER TABLE "MANAGER"."TABLESPACE" MODIFY ("NAME" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."TABLESPACE" MODIFY ("USED_SIZE" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."TABLESPACE" MODIFY ("FREE_SIZE" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."TABLESPACE" MODIFY ("TOTAL_SIZE" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."TABLESPACE" MODIFY ("TIMESTAMP" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."TABLESPACE" ADD CONSTRAINT "TABLESPACE_PK" PRIMARY KEY ("NAME", "TIMESTAMP")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TP_TABLES"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table USERS
+--------------------------------------------------------
+
+  ALTER TABLE "MANAGER"."USERS" MODIFY ("USER_ID" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."USERS" MODIFY ("ACCOUNT_STATUS" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."USERS" MODIFY ("DEFAULT_TB" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."USERS" MODIFY ("TEMP_TB" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."USERS" MODIFY ("CREATED" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."USERS" MODIFY ("TIMESTAMP" NOT NULL ENABLE);
+  ALTER TABLE "MANAGER"."USERS" ADD CONSTRAINT "USERS_PK" PRIMARY KEY ("USER_ID", "TIMESTAMP")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TP_TABLES"  ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table DATAFILE
+--------------------------------------------------------
+
+  ALTER TABLE "MANAGER"."DATAFILE" ADD CONSTRAINT "DATAFILE_FK1" FOREIGN KEY ("NAME_TB", "TIMESTAMP_FK")
+	  REFERENCES "MANAGER"."TABLESPACE" ("NAME", "TIMESTAMP") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table SESSIONS
+--------------------------------------------------------
+
+  ALTER TABLE "MANAGER"."SESSIONS" ADD CONSTRAINT "SESSIONS_FK1" FOREIGN KEY ("USER_ID", "TIMESTAMP_FK")
+	  REFERENCES "MANAGER"."USERS" ("USER_ID", "TIMESTAMP") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table USERS
+--------------------------------------------------------
+
+  ALTER TABLE "MANAGER"."USERS" ADD CONSTRAINT "USERS_FK1" FOREIGN KEY ("DEFAULT_TB", "TIMESTAMP_FK")
+	  REFERENCES "MANAGER"."TABLESPACE" ("NAME", "TIMESTAMP") ENABLE;
+  ALTER TABLE "MANAGER"."USERS" ADD CONSTRAINT "USERS_FK2" FOREIGN KEY ("TEMP_TB", "TIMESTAMP_FK2")
+	  REFERENCES "MANAGER"."TABLESPACE" ("NAME", "TIMESTAMP") ENABLE;
